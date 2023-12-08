@@ -9,17 +9,18 @@ def main():
 
     if len(data) > len(old_data):
         to_csv(data)
-        print(f'Saving to csv file')
+        print(f'Saving as selic.csv')
     else:
         print('No new data available!')
     return 0
 
-def to_csv(data_list: list):
+def save_to_csv(data_list: list):
     import csv
     
     with open('selic.csv', 'w', newline='') as csv_file:
-        writer = csv.writer(csv_file)
-        writer.writerows(data_list)
+        write = csv.writer(csv_file)
+        write.writerows(data_list)
+    print('Saved!')
 
 def retrieve_selic() -> list:
     '''Retrieves selic table as a list of list from bcb website'''
@@ -44,7 +45,7 @@ def retrieve_selic() -> list:
         content.append([])
         for col in cols:
             content[-1].append(col.text) 
-    driver.implicitly_wait(2)
+    assert len(content) > 0
     driver.quit()
     return content
 
