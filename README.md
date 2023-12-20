@@ -1,2 +1,2 @@
-# Comparação Selic e IPCA
-Aqui faço a coleta de dados, tranformação e algumas análises e comparações
+# Selic e IPCA 
+Faço a coleta dos dados nas suas respectivas fontes, tranformação e algumas análises e comparações
